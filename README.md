@@ -27,4 +27,4 @@ AI converts your question to SQL, runs it, and visualizes the results.
 
 ## Built By
 **Ansh Dasrapuria** — MS Information Management, UIUC (May 2026)  
-[LinkedIn](https://linkedin.com/in/your-profile) · [GitHub](https://github.com/anshdasrapuria)
+[LinkedIn](https://www.linkedin.com/in/anshdasrapuria/) · [GitHub](https://github.com/ansh0108?tab=repositories)
