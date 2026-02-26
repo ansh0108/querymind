@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+duckdb
+anthropic
+pandas
+reportlab
+python-multipart
+python-dotenv
+
