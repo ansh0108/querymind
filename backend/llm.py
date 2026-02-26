@@ -31,7 +31,15 @@ Rules:
 - Always query the table named 'data'
 - Use DuckDB SQL syntax
 - Alias all aggregated columns clearly (e.g. AS total_revenue)
-- suggested_followups must be 3 natural follow-up questions"""
+- suggested_followups must be 3 natural follow-up questions
+- NEVER use TO_DATE(), TO_TIMESTAMP(), or STR_TO_DATE() functions
+- For date extraction use: MONTH("col"), YEAR("col"), DAY("col") directly
+- For month names use: MONTHNAME("col")
+- For columns containing mixed text and numbers like "90 min" or "2 Seasons", use TRY_CAST(REGEXP_EXTRACT("col", '\d+') AS INTEGER) to extract numbers
+- Never use CAST() directly on columns that may contain text — always use TRY_CAST() instead
+- If a column has values like "X min" or "X Seasons", extract just the number with REGEXP_EXTRACT
+- Date columns are already cast to TIMESTAMP on load, use them directly
+- Example for month query: SELECT MONTHNAME("Order Date") AS month, SUM("Sales") AS total_sales FROM data GROUP BY month ORDER BY total_sales DESC"""
 
 
 def nl_to_sql(question, schema, sample, row_count):
